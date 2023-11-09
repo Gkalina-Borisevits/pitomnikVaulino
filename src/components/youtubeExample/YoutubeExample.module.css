@@ -1,0 +1,29 @@
+.textLink {
+    display: flex;
+    margin: 30px;
+    flex-direction: column; 
+    margin-bottom: 20px; 
+    padding: 20px;
+    text-decoration: none;
+    color: brown;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.textLink a {
+    flex-direction: column; 
+    color: brown;
+    text-decoration: none;
+}
+
+.textLink a:hover {
+    color: green;
+}
+.video {
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 20px; 
+}
+.video iframe {
+    margin-bottom: 20px; 
+    padding: 20px;
+  }

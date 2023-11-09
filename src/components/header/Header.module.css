@@ -1,0 +1,41 @@
+.navbar {
+   position: sticky;
+  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    background-color: rgb(158, 187, 78);
+    width: 100%;
+    height: 120px;
+    padding: 30px;
+  }
+  
+  .navbar>a {
+    font-size: larger;
+    margin: 80px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: rgb(98, 89, 89);
+    display: flex;
+  }
+  
+  .navbar>a:hover {
+    text-decoration: underline;
+  }
+
+  .navbar>a:global.active {
+    font-size:xx-large;
+text-decoration: underline;
+color: rgb(76, 59, 47);
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar {
+      flex-direction: column; 
+      align-content: flex-start;
+    }
+    .navbar a {
+      margin-top: 5px;
+    }
+  }
