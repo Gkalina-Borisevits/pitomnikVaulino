@@ -9,6 +9,9 @@ import MyComponent from "./components/componentMy/MyComponent"
 import YoutubeExample from "./components/youtubeExample/YoutubeExample"
 import DetailItem from "./features/detailItem/DetailItem"
 import Delivery from "./components/delivery/Delivery"
+import Login from "./features/user/Login"
+import Gallery from "./components/gallery/Gallery"
+import DesignDecor from "./components/designDecor/DesignDecor"
 // import Images from "./features/imageGallery/Images"
 
 function App() {
@@ -20,7 +23,10 @@ function App() {
 
           <Route path="/:id" element={<ProductItem />} />
           <Route path="/:id/:detailId" element={<DetailItem />} />
-          <Route path="componentMy" element={<MyComponent />} />
+          <Route path="login" element={<Login />} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="designDecor" element={<DesignDecor />} />
+           <Route path="componentMy" element={<MyComponent />} />
           <Route path="delivery" element={<Delivery />} />
           {/* <Route path="imageGallery" element={<Images />} /> */}
           <Route path="youtubeExample" element={<YoutubeExample />} />

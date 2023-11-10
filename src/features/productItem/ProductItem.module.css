@@ -42,3 +42,28 @@ h1 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     object-fit: contain;
 }
+.basket {
+ height: 300px;
+ 
+border-top: 1px solid black;
+  
+}
+
+.bigContainer {
+    background-color: rgb(198, 223, 192);
+    display: flex;
+    margin: top;
+}
+
+@media only screen and (max-width: 768px) {
+    .bigContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .basket{
+    font-size: small;
+    }
+    
+      }

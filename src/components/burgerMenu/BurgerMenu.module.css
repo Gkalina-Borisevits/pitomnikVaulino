@@ -1,0 +1,53 @@
+.burgerMenu {
+    position: relative;
+    
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 34px;
+    opacity: 0.5; 
+  }
+  
+  .menu {
+    position: absolute;
+    opacity: 0.7; 
+    left: 0;
+    background-color: rgb(101, 170, 101);
+    padding: 10px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 15px rgb(8, 8, 8);
+    width: 200px;
+    color: rgb(100, 97, 97);
+    text-align: right;
+    
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+    
+    color: white;
+  }
+
+  .menu a:hover {
+    color: rgb(85, 217, 37);
+    text-shadow: 0 0 15px rgb(34, 77, 34);
+   
+  }
+
+  @media screen and (max-width: 600px) {
+    .burgerMenu {
+      position: static;
+      }
+      .menu a {
+        color:rgb(34, 31, 31);
+      }
+      .menu a:hover {
+        color:black;
+      }
+    }
+  

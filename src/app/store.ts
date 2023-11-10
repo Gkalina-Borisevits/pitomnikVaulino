@@ -2,14 +2,14 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import counterReducer from "../features/counter/counterSlice"
 import {productSlice} from "../features/products/productSlice"
 import { productDetailsSlice } from "../features/productsDetails/productDetailsSlice"
-// import {imageSlice} from "../features/imageGallery/imageSlice"
+import {imageSlice} from "../features/imageGallery/imageSlice"
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     products:productSlice.reducer,
-    productsDetails:productDetailsSlice.reducer
-    //  imageGallery: imageSlice.reducer
+    productsDetails:productDetailsSlice.reducer,
+     imageGallery: imageSlice.reducer
   },
 })
 

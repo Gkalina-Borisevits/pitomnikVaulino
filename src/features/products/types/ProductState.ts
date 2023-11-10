@@ -5,4 +5,5 @@ export default interface ProductState {
   basket: number [] 
   error?: null | string
   isLoading?: boolean
+  favorites: number[]
 }

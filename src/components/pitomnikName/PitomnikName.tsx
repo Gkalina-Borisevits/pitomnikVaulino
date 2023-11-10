@@ -1,6 +1,7 @@
 import { FC } from 'react'
 // import cn from 'classnames'
 import styles from './PitomnikName.module.css'
+import { Link } from 'react-router-dom';
 
 const PitomnikName: FC = () => {
 console.log('Lets go!');
@@ -17,6 +18,9 @@ return (
 <ul>Северский р - н, </ul>
 <ul>ст. Новодмитриевская</ul>
 <ul>8 (989) 142 - 69 - 65</ul>
+<div><Link to="/basket">
+        <p>Корзина</p>
+      </Link></div>
 </div>
 </div>
 )}

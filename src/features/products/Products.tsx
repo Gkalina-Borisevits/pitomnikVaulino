@@ -13,9 +13,9 @@ const Products: FC = () => {
   const { value, status } = useAppSelector((state) => state.counter)
   const dispatch = useAppDispatch()
 
-  // useEffect(() => {
-  //   dispatch(loadProducts())
-  // }, [])
+  useEffect(() => {
+    dispatch(loadProducts())
+  }, [])
 
   console.log("Lets go!")
   return (

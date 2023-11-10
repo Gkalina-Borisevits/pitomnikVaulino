@@ -7,24 +7,34 @@ const initial: ProductState = {
   basket: [],
   isLoading: false,
   error: null,
+  favorites: []
 };
 
 export const productSlice = createSlice({
-    name: 'products', 
-    initialState: initial, 
-    reducers: {
-      addToBasket: (state, action) => {
-      const productID = action.payload
+  name: 'products',
+  initialState: initial,
+  reducers: {
+    addToBasket: (state, action) => {
+      const productID = action.payload;
 
-      const index = state.basket.indexOf(productID)
+      const index = state.basket.indexOf(productID);
       if (index === -1) {
-        state.basket.push(productID)
+        state.basket.push(productID);
       } else {
-        state.basket.splice(index, 1)
+        state.basket.splice(index, 1);
+      }
+    },
+    toggleFavorites: (state, action) => {
+      const productID = action.payload;
+
+      const index = state.favorites.indexOf(productID);
+      if (index === -1) {
+        state.favorites.push(productID);
+      } else {
+        state.favorites.splice(index, 1);
       }
     }
-    }, 
-
+  },
     extraReducers: (builder) => { 
       builder
        
@@ -45,4 +55,4 @@ export const productSlice = createSlice({
     }
   })
 
-  export const { addToBasket } = productSlice.actions
+  export const { addToBasket, toggleFavorites } = productSlice.actions
