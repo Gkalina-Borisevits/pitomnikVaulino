@@ -15,36 +15,49 @@ const ProductItem: FC = () => {
   const dispatch = useAppDispatch();
 
 const {products, basket} = useAppSelector(state => state.products)
+const [count, setCount] = useState(0);
 
 
-  let cost = basket.reduce(
-    (total, itemId) => (total + products[id-1].details[itemId].cost, 0)
-  )
+const calculateTotalCost = () => {
+  let totalCost = 0;
+  basket.forEach((el) => {
+    totalCost += products[id - 1].details[el - 1].cost;
+  });
+  setCount(totalCost);
+};
+
+useEffect(() => {
+  calculateTotalCost();
+}, [basket, products, id]);
+
+  
   return <>
- <h1>{basket.length}</h1>
- {basket.length >1 && <>
- <p>{cost}</p>
- 
- {basket.map(el => <>
- <h1>{products[id-1].details[el].name}</h1>
- </>
- )}
- </>}
+ {basket.length > 0 && <>
+      <p>{count}</p>
+      <h1>{basket.length}</h1>
+  
+      {basket.map(el => <>
+        <p>{products[id - 1].details[el].name} {products[id - 1].details[el - 1].cost}</p>
+      </>
+      )}
+    </>}
     <div>
       
       
       <ul className={styles.productList}>
         {products&&
         <>{products[id-1]?.details.map((el) => (
-         
+          
           <li className={styles.productCard} key={el.id}>
-            <span className={styles.title}>{el.name}</span>
-            <div className={styles.imgContainer}>
-              <img className={styles.image} src={el.image} alt="" />
+            <span className={styles.title}>{el.name}.</span>
+            <span className={styles.title}>  Размер горшка: {el.size}. </span>
+            <span className={styles.title}> Стоимость: {el.cost} р.</span>
             <MyButton text="Добавить в корзину" onClick={() => dispatch(addToBasket(el.id))} />
-            </div>
             <Link to={String(el.id)}> <MyButton text="To product" />
             </Link>
+            <div className={styles.imgContainer}>
+              <img className={styles.image} src={el.image} alt="" />
+            </div>
           </li>
         ))}
         </>

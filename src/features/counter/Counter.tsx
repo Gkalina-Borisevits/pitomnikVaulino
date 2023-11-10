@@ -11,12 +11,6 @@ function Counter(): JSX.Element {
     setCounter(counter + 1)
   }
 
-  
-
-  useEffect(() => {
-    console.log('4.');
-  }, [title]);
-
 
   return (
     <div className='App'>
@@ -27,8 +21,7 @@ function Counter(): JSX.Element {
         <span>{counter}</span>
         <MyButton text="Добавить в корзину" onClick={handlePlus} />
         
-        <span>{title}</span>
-        <MyButton text="повзрослеть" onClick={() => setTitle(title+ 1)} />
+        
       </div>
     </div>
   );

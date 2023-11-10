@@ -2,6 +2,7 @@ import { FC } from 'react'
 // import cn from 'classnames'
 import styles from './Info.module.css'
 import YoutubeExample from '../youtubeExample/YoutubeExample';
+import MyComponent from '../componentMy/MyComponent';
 
 const Info: FC = () => {
 console.log('Lets go!');

@@ -2,7 +2,7 @@ import Product from "./Product";
 
 export default interface ProductState {
   products:Product[]
-  basket: Number [] 
+  basket: number [] 
   error?: null | string
   isLoading?: boolean
 }

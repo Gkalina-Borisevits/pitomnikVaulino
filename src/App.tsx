@@ -8,6 +8,7 @@ import ProductItem from "./features/productItem/ProductItem"
 import MyComponent from "./components/componentMy/MyComponent"
 import YoutubeExample from "./components/youtubeExample/YoutubeExample"
 import DetailItem from "./features/detailItem/DetailItem"
+import Delivery from "./components/delivery/Delivery"
 // import Images from "./features/imageGallery/Images"
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/:id" element={<ProductItem />} />
           <Route path="/:id/:detailId" element={<DetailItem />} />
           <Route path="componentMy" element={<MyComponent />} />
+          <Route path="delivery" element={<Delivery />} />
           {/* <Route path="imageGallery" element={<Images />} /> */}
           <Route path="youtubeExample" element={<YoutubeExample />} />
           <Route path="*" element={<Error />} />

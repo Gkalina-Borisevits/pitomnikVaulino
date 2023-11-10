@@ -19,15 +19,18 @@ const {products} = useAppSelector(state => state.products)
   return (
     <div>
       
-      <p>{id}</p>
-      <span>{detailId}</span>
-     
       <ul className={styles.productList}>
         {products[id -1]&&
         <>
-
+<div className={styles.container}>
         <h1>{products[id-1]?.details[detailId - 1].name}</h1>
-        <h1>{products[id-1]?.details[detailId - 1].size}</h1>
+        <h1>Размер горшка: {products[id-1]?.details[detailId - 1].size},</h1>
+        <h1> Стоимость: {products[id-1]?.details[detailId].cost - 1}р.</h1>
+        <img className={styles.image} src={products[id-1]?.details[detailId - 1].image} alt="" />
+        
+            <Link to={String(products[id - 1])}> <MyButton text="Назад" />
+            </Link>
+        </div>
         </>
 
         }
