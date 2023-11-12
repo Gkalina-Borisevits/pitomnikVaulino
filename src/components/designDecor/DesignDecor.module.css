@@ -1,9 +1,16 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    padding: 15px;
-}
-
-.image {
-    width: 200px;
-}
+  
+    
+    }
+    
+    .image {
+        transition: transform 0.3s ease-in-out;
+        height: 200px;
+        margin: 15px;
+    } 
+    
+    .image:hover {
+        transform: scale(3.0);
+    }

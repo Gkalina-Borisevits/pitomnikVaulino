@@ -42,12 +42,7 @@ h1 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     object-fit: contain;
 }
-.basket {
- height: 300px;
- 
-border-top: 1px solid black;
-  
-}
+
 
 .bigContainer {
     background-color: rgb(198, 223, 192);

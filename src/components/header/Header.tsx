@@ -25,6 +25,7 @@ dispatch(loadImages())
     <NavLink to="gallery">Галерея</NavLink>
     <NavLink to="youtubeExample">Полезная информация</NavLink>
     <NavLink to="contacts">Контакты</NavLink>
+    {/* <NavLink to="login">Login</NavLink> */}
 
     </div>
   );

@@ -1,20 +1,43 @@
-import { FC } from 'react'
+import React, { FC, useState } from 'react';
 import { useAppSelector } from '../../app/hooks';
-// import cn from 'classnames'
-// import styles from './Basket.module.css'
+import styles from './Basket.module.css';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
 const Basket: FC = () => {
   const { basket, products } = useAppSelector(state => state.products);
+  const [count, setCount] = useState(0);
+  const { id } = useParams() as unknown as { id: number };
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
+
+
+  function calculateTotalCost(): number {
+    let totalCost = 0;
+    basket.forEach(el => {
+      totalCost += products[id].details[el].cost;
+    });
+    return totalCost;
+  }
 
   return (
-    <div>
-      <h1>Корзина</h1>
-      {basket.map((productId) => (
-        <div key={productId}>
-          <p>{products[productId - 1].name}</p>
-          <p>{products[productId - 1].cost} р.</p>
-        </div>
-      ))}
+    <div className={styles.bigContainer}>
+      <div className={styles.basket}>
+        {basket.length > 0 && (
+          <>
+             <p>Общая стоимость: {calculateTotalCost()} р</p>
+            <p>Позиций в корзине: {basket.length}</p>
+            <div onClick={() => setIsBasketOpen(!isBasketOpen)}>
+              </div>
+            {isBasketOpen && (
+              <>     
+            {basket.map(el => (
+              <p key={el}>{products[id].details[el].name}, {products[id].details[el].size}, {products[id].details[el].cost}</p>
+              ))}
+              <Link to="/basket">Перейти в корзину</Link>
+            </>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };

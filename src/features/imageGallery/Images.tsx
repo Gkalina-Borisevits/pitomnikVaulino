@@ -28,9 +28,6 @@ const Images: FC = () => {
             <div className={styles.imgContainer}>
               <img className={styles.image} src={el.image} alt="" />
             </div>
-            <MyButton  text="delete"/>
-            <Link to={String(el.id)}> <MyButton text="To product" />
-            </Link>
           </li>
         ))}
       </ul>

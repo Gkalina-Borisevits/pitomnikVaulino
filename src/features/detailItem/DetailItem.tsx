@@ -9,36 +9,35 @@ import axios from "axios"
 import { useAppSelector } from "../../app/hooks"
 
 const DetailItem: FC = () => {
-  const { id, detailId } = useParams();
+  const { id, detailId } = useParams() as unknown as {
+    id: number
+    detailId: number
+  }
+  const { products } = useAppSelector((state) => state.products)
 
-const {products} = useAppSelector(state => state.products)
-
-  // const [product, setProduct] = useState<Product>(initialValue)
-
-  
   return (
     <div>
-      
       <ul className={styles.productList}>
-        {products[id]&&
-        <>
-<div className={styles.container}>
-  <ul className={styles.container}>
-        <li>{products[id]?.details[detailId].name}</li>
-        <li>Размер горшка: {products[id]?.details[detailId].size},</li>
-        <li> Стоимость: {products[id]?.details[detailId].cost}р.</li>
-        <img className={styles.image} src={products[id]?.details[detailId].image} alt="" />
-        
-            {/* <Link to={String (products[id-1]?.details)}> <MyButton text="Назад" /> */}
-            {/* </Link> */}
-            </ul>
-        </div>
-        </>
-
-        }
-      </ul> 
-      
-    
+        {products[id] && (
+          <>
+            <div className={styles.container}>
+              <ul className={styles.container}>
+                <li>{products[id]?.details[detailId].name}</li>
+                <li>Размер горшка: {products[id]?.details[detailId].size},</li>
+                <li> Стоимость: {products[id]?.details[detailId].cost}р.</li>
+                <img
+                  className={styles.image}
+                  src={products[id]?.details[detailId].image}
+                  alt=""
+                />
+                <Link to="/">
+                  <MyButton text="Назад" />
+                </Link>
+              </ul>
+            </div>
+          </>
+        )}
+      </ul>
     </div>
   )
 }
