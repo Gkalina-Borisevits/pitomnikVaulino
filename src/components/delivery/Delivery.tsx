@@ -8,14 +8,21 @@ import styles from './Delivery.module.css'
 
 const Delivery: FC = () => {
   const { images } = useAppSelector((state) => state.imageGallery)
+  const { user } = useAppSelector((state) => state.user)
   console.log("Lets go!")
   return (
     <>
-    {/* <div>
-        
-  <Link to="/basket">
-        <p>Корзина</p>
-      </Link></div> */}
+    {/* <div className={styles.user}>
+        {user?.id ? (
+          <>
+            <span>Привет, {user?.firstName}! </span>
+            <Basket />
+            
+          </>
+        ) : (
+          <Link to="login" />
+        )}
+      </div> */}
       <div className={styles.container}>
         {images &&
           images.map((element) => (
