@@ -4,16 +4,17 @@
 }
 
 .image:hover {
-    width: 500px;
+    transform: scale(1.8);
     position: sticky;
     z-index: 3;
+    transition: transform 0.3s ease-in-out;
 
 }
 
 .container {
     display: flex;
     flex-direction: column;
- list-style: none;
+    list-style: none;
     font-size: x-large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    

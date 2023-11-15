@@ -31,8 +31,8 @@ const Login: FC = () => {
         <p>password: '0lelplR'</p>
 
 
-        <input type="text" placeholder='имя' value={username} onChange={(event) => setUsername(event.target.value)} />
-        <input type="password" placeholder='пароль' value={password} onChange={(event) => setPassword(event.target.value)} />
+        <input className={styles.inputName}type="text" placeholder='имя' value={username} onChange={(event) => setUsername(event.target.value)} />
+        <input className={styles.inputPas}type="password" placeholder='пароль' value={password} onChange={(event) => setPassword(event.target.value)} />
         <MyButton text="войти" onClick={handleLogin} />
         
       </div>

@@ -57,8 +57,7 @@ h1 {
         align-items: center;
     }
     
-    .basket{
-    font-size: small;
+    .productList{
+    display: flex;
     }
-    
       }

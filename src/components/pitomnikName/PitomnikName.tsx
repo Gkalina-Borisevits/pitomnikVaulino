@@ -20,7 +20,7 @@ const PitomnikName: FC = () => {
         }
       ></img>
       <h1 className={styles.text}>Питомник Ваулино</h1>
-      
+
       <div className={styles.adresNord}>
         <ul>Московская обл.,</ul>
         <ul>Можайский р-н, </ul>
@@ -40,9 +40,7 @@ const PitomnikName: FC = () => {
           <>
             <span>Привет, {user?.firstName}! </span>
             <Basket />
-            <Link to="/basket">
-              <p>Корзина</p>
-            </Link>
+            
           </>
         ) : (
           <Link to="login" />

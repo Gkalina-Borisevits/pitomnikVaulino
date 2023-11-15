@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, Navigate, useParams } from "react-router-dom"
 
 //import cn from 'classnames'
 import styles from "./DetailItem.module.css"
@@ -14,9 +14,12 @@ const DetailItem: FC = () => {
     detailId: number
   }
   const { products } = useAppSelector((state) => state.products)
-
+  const { user } = useAppSelector(state => state.user)
+  if (!user) {
+    return <Navigate to='/' />
+  }
   return (
-    <div>
+    
       <ul className={styles.productList}>
         {products[id] && (
           <>
@@ -38,7 +41,6 @@ const DetailItem: FC = () => {
           </>
         )}
       </ul>
-    </div>
   )
 }
 

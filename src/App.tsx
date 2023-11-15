@@ -25,8 +25,7 @@ function App() {
           <Route path="/:id" element={<ProductItem />} />
           <Route path="/:id/:detailId" element={<DetailItem />} />
           <Route path="login" element={<Login />} />
-          <Route path="basket" element={<Basket />} />
-          
+          <Route path="basket" element={<Basket />} />       
           <Route path="gallery" element={<Gallery />} />
           <Route path="designDecor" element={<DesignDecor />} />
            <Route path="componentMy" element={<MyComponent />} />

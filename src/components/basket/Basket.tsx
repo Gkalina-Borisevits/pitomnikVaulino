@@ -21,20 +21,18 @@ const Basket: FC = () => {
   return (
     <div className={styles.bigContainer}>
       <div className={styles.basket}>
-        {basket.length > 0 && (
+      <p>Общая стоимость: {calculateTotalCost()} р</p>
+        <p>Позиций в корзине: {basket.length}</p>
+        <button onClick={() => setIsBasketOpen(!isBasketOpen)}>
+          {isBasketOpen ? "Закрыть корзину" : "Открыть корзину"}
+        </button>
+        {isBasketOpen && (
           <>
-             <p>Общая стоимость: {calculateTotalCost()} р</p>
-            <p>Позиций в корзине: {basket.length}</p>
-            <div onClick={() => setIsBasketOpen(!isBasketOpen)}>
-              </div>
-            {isBasketOpen && (
-              <>     
             {basket.map(el => (
-              <p key={el}>{products[id].details[el].name}, {products[id].details[el].size}, {products[id].details[el].cost}</p>
-              ))}
-              <Link to="/basket">Перейти в корзину</Link>
-            </>
-            )}
+              <p key={el}>
+                {products[id].details[el].name}, размер: {products[id].details[el].size}, стоимость: {products[id].details[el].cost}
+              </p>
+            ))}
           </>
         )}
       </div>

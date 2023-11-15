@@ -25,14 +25,35 @@
 
   .user {
     margin: 15px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    
+    
   }
+
 
   @media only screen and (max-width: 768px) {
     
 .text{
-font-size: 0;
+font-size: 15px;
 }
 .container {
-  height: 130px;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  
+ 
+  
 }
+.logo {
+ height: 100px;
+ width: 100px;
+ margin-bottom: 10px;
+}
+.user {
+  margin-top: 5px; 
+}
+
   }

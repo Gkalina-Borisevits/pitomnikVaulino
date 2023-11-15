@@ -33,19 +33,17 @@ if (!user?.id && !isUserLoading) {
   return (
     <>
       <p>Необходимо <Link to="/login"> Войти </Link> в аккаунт или <Link to="/login">Зарегистрироваться</Link></p>
-      
-      
+       
     </>
   )
 }
-
 if (isUserLoading === true) {
   return <Loader />
 }
+
 return (
   <div className={styles.bigContainer}>
-    <div className={styles.basket}>
-    <div>
+   
     <ul className={styles.productList}>
           {products &&
             products[id]?.details.map(el => (
@@ -82,9 +80,7 @@ return (
             </li>
           ))}
       </ul>
-          </div>
     </div>
-  </div>
 );
 };
 export default ProductItem

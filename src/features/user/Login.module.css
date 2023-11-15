@@ -1,0 +1,14 @@
+.inputName {
+    background-color: rgb(205, 244, 225);
+    border: 2px solid rgb(136, 216, 15);
+    height: 35px;
+    margin: 5px;
+    color: rgb(8, 59, 13);
+    font-size: 16px;
+}
+
+.inputPas {
+    background-color: rgb(205, 244, 225);
+    border: 2px solid rgb(136, 216, 15);
+    height: 35px;
+}
